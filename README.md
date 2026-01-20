@@ -1,1 +1,2 @@
-# LLM-
+# This repository is intended for my studies on Large Language Models (LLMs).
+## I am starting by exploring the excellent material developed by Sebastian Kaschka in his book " Build a Large Language Model (From Scratch)" and on his YouTube channel.
