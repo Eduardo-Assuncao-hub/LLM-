@@ -28,6 +28,6 @@ print(f"attn_scores: {attn_scores}")
 attn_weights = torch.softmax(attn_scores, dim=1)
 print(f"attn_weights: {attn_weights}")
 
-# Calculate the context vectors
+# Compute the context vectors by calculating the weighted sum over inputs.  
 all_context_vecs = attn_weights@inputs
 print(f"all_context_vecs: {all_context_vecs}")
