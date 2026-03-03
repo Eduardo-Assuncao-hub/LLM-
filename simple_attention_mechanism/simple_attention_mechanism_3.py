@@ -26,11 +26,13 @@ torch.manual_seed(123)
 # The first way of performing weights parameters. For this we use torch parameter that is a wrapper around the tensor in Pytorch.
 W_query = torch.nn.Parameter(torch.rand(d_in, d_out))
 print(f"W_query: {W_query}")
+print("--------------------------------------------")
 W_key = torch.nn.Parameter(torch.rand(d_in, d_out))
 print(f"W_query: {W_key}")
+print("--------------------------------------------")
 W_value = torch.nn.Parameter(torch.rand(d_in, d_out))
 print(f"W_query: {W_value}")
-
+print("--------------------------------------------")
 # Now compute the query in respect to second input
 query_2 = x_2 @ W_query
 # Compute the keys and values
@@ -38,12 +40,14 @@ keys = inputs @ W_key
 values = inputs @ W_value 
 print(f"keys shape: {keys.shape}")
 print(f"keys: {keys}")
-
+print("--------------------------------------------")
 #Now lets cumpute the attention scores.
 att_scores_2 = query_2 @ keys.T
 # Computs the attention weights
 d_k = keys.shape[1]
 att_weights_2 = torch.softmax(att_scores_2 / d_k**0.5, dim=-1)
-print(f"att_weights_2: {att_weights_2}") 
+print(f"att_weights_2: {att_weights_2}")
+print("--------------------------------------------") 
 #Compute the context vector in respect to input 2
 context_vec_2 = att_weights_2 @ values
+print(f"context_vec_2: {context_vec_2}")
